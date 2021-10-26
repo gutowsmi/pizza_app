@@ -8,9 +8,14 @@ import java.util.Date;
 public class OrderStatusDto {
     private OrderStatusType status;
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private Date createdAt;
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date updatedAt;
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     private Date expectedAt;
+
+    public OrderStatusDto() {
+    }
 
     public OrderStatusType getStatus() {
         return status;
@@ -18,6 +23,14 @@ public class OrderStatusDto {
 
     public void setStatus(OrderStatusType status) {
         this.status = status;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 
     public Date getUpdatedAt() {
@@ -36,12 +49,10 @@ public class OrderStatusDto {
         this.expectedAt = expectedAt;
     }
 
-    public OrderStatusDto(OrderStatusType status, Date updatedAt, Date expectedAt) {
+    public OrderStatusDto(OrderStatusType status, Date createdAt, Date updatedAt, Date expectedAt) {
         this.status = status;
+        this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.expectedAt = expectedAt;
-    }
-
-    public OrderStatusDto() {
     }
 }
