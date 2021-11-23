@@ -1,5 +1,6 @@
 package pl.michal.pizza.data.entity.size;
 
+import pl.michal.pizza.data.entity.pizza.PizzaEntity;
 import pl.michal.pizza.domain.model.SizeType;
 
 import javax.persistence.*;
@@ -21,4 +22,8 @@ public class SizeEntity {
 
     @Column(name = "pizza_id")
     private Integer pizzaId;
+
+    @ManyToOne
+    @JoinColumn(name = "pizza_id", insertable = false,updatable = false)
+    private PizzaEntity pizza;
 }
