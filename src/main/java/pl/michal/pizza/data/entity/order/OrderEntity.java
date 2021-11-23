@@ -1,11 +1,13 @@
 package pl.michal.pizza.data.entity.order;
 
+import pl.michal.pizza.data.entity.ordersize.OrderSizeEntity;
 import pl.michal.pizza.domain.model.OrderStatusType;
 import pl.michal.pizza.domain.model.SizeType;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Set;
 
 public class OrderEntity {
     @Id
@@ -43,5 +45,7 @@ public class OrderEntity {
     @Column(name ="token")
     private String token;
 
+    @OneToMany(mappedBy = "order")
+    private Set<OrderSizeEntity> orderSize;
 
 }
