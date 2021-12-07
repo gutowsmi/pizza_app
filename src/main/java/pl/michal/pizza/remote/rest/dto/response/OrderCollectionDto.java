@@ -13,6 +13,9 @@ public class OrderCollectionDto {
         return orders;
     }
 
+    public OrderCollectionDto() {
+    }
+
     public void setOrders(List<OrderDto> orders) {
         this.orders = orders;
     }
